@@ -52,7 +52,7 @@ script.on_event(defines.events.on_tick,
       autopilot.tick_player(player)
 
       -- Set correct military target flag
-      if player.character then
+      if player.character and player.character.valid and player.character.name ~= "se-map-revealer" then
         if player
             and player.driving
             and player.vehicle
